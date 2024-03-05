@@ -46,6 +46,7 @@ export function Scriptbox({
           customStyle={{
             lineHeight: "1",
             fontSize: "15px",
+            zIndex: "0",
           }}
           style={atomDark}
         >

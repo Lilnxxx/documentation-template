@@ -23,16 +23,16 @@ export function Sidebar({ takeref }: { takeref: any }) {
         takeref.current[i].current.scrollIntoView({ behavior: "smooth" });
   }, []);
   return (
-    <div className="flex flex-col items-center bg-blue-50 w-[20%] h-[92.5vh] overflow-auto border-r-[1px] border-slate-500">
+    <div className="md:flex flex-col items-center bg-blue-50 md:w-[20%] h-[92.5vh] overflow-auto border-r-[1px] border-slate-500">
       <Searchbar />
-      <div className="flex flex-col justify-start w-[90%]">
-        <div className="my-3 space-y-1 cursor-pointer">
-          <p className="text-[12px] font-bold">Getting Started</p>
+      <div className="flex flex-col justify-start w-[90%] text-[15px] leading-loose">
+        <div className="my-3 space-y-1 cursor-pointer ">
+          <p className="text-[16px] font-bold">Getting Started</p>
           {Intro_section.map((ind, i) => {
             return (
               <p
                 onClick={() => scrollhandler(i)}
-                className={`text-[12px] ${
+                className={` ${
                   Intro_section[i].path === location.pathname
                     ? "bg-red-400"
                     : null
@@ -44,13 +44,13 @@ export function Sidebar({ takeref }: { takeref: any }) {
           })}
         </div>
         <div className="my-3 space-y-1 cursor-pointer">
-          <p className="text-[12px] font-bold">Endpoints</p>
+          <p className="text-[16px] font-bold">Endpoints</p>
           {Ends_section.map((ind) => {
             return (
               <div>
                 <p
                   onClick={() => scrollhandler(ind.id)}
-                  className={`text-[12px] ${
+                  className={` ${
                     ind.path === location.pathname ? "bg-red-400" : null
                   }`}
                 >
@@ -61,7 +61,7 @@ export function Sidebar({ takeref }: { takeref: any }) {
                     return (
                       <p
                         onClick={() => scrollhandler(ind2.id)}
-                        className={`text-[12px] ml-2 ${
+                        className={` ml-2 ${
                           ind2.path === location.pathname
                             ? "bg-yellow-400"
                             : null

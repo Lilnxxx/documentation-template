@@ -10,6 +10,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { allElements } from "../utils/data";
+import ParallaxDiv from "../sections/ParallaxDiv";
 // import { useMemo } from "react";
 
 export function Mydocs() {
@@ -76,13 +77,11 @@ export function Mydocs() {
   return (
     <div>
       <div className=" overflow-scroll overscroll-none m-0 p-0 ">
-        <Navbar />
+        <Navbar takeref={sectionRefs} />
         <div className="flex">
-          <Sidebar takeref={sectionRefs} />
-          <div
-            className=" w-full h-[92.5vh] overflow-auto bg-red-300"
-            ref={contentref}
-          >
+          {window.innerWidth > 700 ? <Sidebar takeref={sectionRefs} /> : null}
+          <div className=" w-full h-[92.5vh] overflow-auto " ref={contentref}>
+            <ParallaxDiv takeref={sectionRefs.current[sectionIndx++]} />
             <Intro takeref={sectionRefs.current[sectionIndx++]} />
             <Authentication takeref={sectionRefs.current[sectionIndx++]} />
             <Request takeref={sectionRefs.current[sectionIndx++]} />
