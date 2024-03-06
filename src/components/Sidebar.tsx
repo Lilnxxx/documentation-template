@@ -56,7 +56,8 @@ export function Sidebar({ takeref }: { takeref: any }) {
                 >
                   {ind.title}
                 </p>
-                {location.pathname.includes(ind.path) &&
+                {(location.pathname.includes(ind.path) ||
+                  window.innerWidth < 700) &&
                   ind.child.map((ind2) => {
                     return (
                       <p

@@ -11,7 +11,7 @@ export function Section({
 }) {
   return (
     <div
-      className={`w-[75%] h-fit mx-12 pb-3 pt-12 space-y-3 ${
+      className={`w-screen mx-5 md:w-[75%] max-w-[85%]  h-fit md:mx-12 pb-3 pt-12 space-y-3 ${
         givemeBorder ? "border-t-[1px]" : null
       } border-slate-600`}
       ref={takeref}

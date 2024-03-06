@@ -80,9 +80,9 @@ export function Mydocs() {
         <Navbar takeref={sectionRefs} />
         <div className="flex">
           {window.innerWidth > 700 ? <Sidebar takeref={sectionRefs} /> : null}
-          <div className=" w-full h-[92.5vh] overflow-auto " ref={contentref}>
+          <div className=" w-full h-[92.5vh] overflow-auto  " ref={contentref}>
             <ParallaxDiv takeref={sectionRefs.current[sectionIndx++]} />
-            <Intro takeref={sectionRefs.current[sectionIndx++]} />
+            {/* <Intro takeref={sectionRefs.current[sectionIndx++]} /> */}
             <Authentication takeref={sectionRefs.current[sectionIndx++]} />
             <Request takeref={sectionRefs.current[sectionIndx++]} />
             <Streaming takeref={sectionRefs.current[sectionIndx++]} />
